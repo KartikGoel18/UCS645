@@ -1,5 +1,6 @@
 #include "correlate.hpp"
-#include <print>
+#include <iostream>
+#include <format>
 #include <random>
 #include <omp.h>
 
@@ -11,7 +12,7 @@ auto generate_random_number() -> double {
 
 auto main(int argc, char** argv) -> int {
         if(argc != 3) {
-                std::println("Usage: ./correlate_matrix_sequential <number_of_rows> <number_of_columns>");
+                std::cout<<std::format("Usage: ./correlate_matrix_sequential <number_of_rows> <number_of_columns>\n");
                 return -1;
         }
         int rows{std::atoi(argv[1])};
@@ -28,5 +29,5 @@ auto main(int argc, char** argv) -> int {
                 }
         }
         auto seq_time{correlate_matrix_sequential(matrix)};
-        std::println("Execution time: {:.2f}ms",seq_time.count());
+        std::cout<< std::format("Execution time: {:.2f}ms\n",seq_time.count());
 }
