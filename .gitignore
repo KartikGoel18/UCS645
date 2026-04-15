@@ -1,0 +1,9 @@
+*
+!*/
+!*/*.c
+!*/*.cpp
+!*/*.hpp
+!*/*.pdf
+!*/Makefile
+!.gitignore
+!Readme.md
